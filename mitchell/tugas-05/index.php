@@ -150,7 +150,7 @@ function getGrade($nilaiAkhir){
 			$('#tbody').append(html)
 		}
 		<?php if (isset($_POST['submit'])){ ?>
-			// window.print()
+			window.print()
 		<?php } ?>
 	</script>
 </body>
