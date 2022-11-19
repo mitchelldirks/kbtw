@@ -1,7 +1,7 @@
 <?php 
 error_reporting();
 $json_file = 'data.json';
-$txt_file = 'struk.text';
+$txt_file = 'struk.txt';
 $json = file_get_contents($json_file) or die("Unable to open data.json!");
 $json = json_decode($json,true);
 function land($string,$max=10)
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 		$data[$i]['subtotal']= ($data[$i]['price'] * $data[$i]['qty']) - (($data[$i]['disc']/100) * $data[$i]['price']);
 	}
 	cetakStruk($data);
-	
+
 	//show file on new tab
 	echo '<script type="text/javascript" language="Javascript">window.open("'.$txt_file.'");</script>';
 }
