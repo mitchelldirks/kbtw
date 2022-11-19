@@ -10,10 +10,13 @@ $aksi = 'aksi.php';
 	<div class="col-md-10">
 		<div class="card">
 			<div class="card-header">
+				<span class="float-right">
+					<a class="btn btn-info" onclick="printDiv('print')"><i class="fa fa-print"></i> Print</a>
+				</span>
 				<h2>Laporan Nilai</h2>
 			</div>
 			<div class="card-body">
-				<div class="table-responsive">
+				<div class="table-responsive" id="print">
 					<table class="table table-striped">
 						<thead class="thead-dark">
 							<tr>
@@ -65,4 +68,16 @@ $aksi = 'aksi.php';
 	</div>
 	<div class="col-md-1"></div>
 </div>
+<script type="text/javascript">
+	function printDiv(divName) {
+		var printContents = document.getElementById(divName).innerHTML;
+		var originalContents = document.body.innerHTML;
+
+		document.body.innerHTML = printContents;
+
+		window.print();
+
+		document.body.innerHTML = originalContents;
+	}
+</script>
 <?php unset($_SESSION['flash']); ?>
