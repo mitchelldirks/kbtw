@@ -36,6 +36,7 @@ function cetakStruk($data)
 	fwrite($file,"                                                         Pajak ".land($pajak)."\n");
 	fwrite($file,"                                                         Bayar ".land($bayar)."\n");
 	fwrite($file,"===============================================================================\n");
+	fwrite($file,"=======================  Terima Kasih Sudah Berbelanja  =======================\n");
 	fclose($file);
 }
 if (isset($_POST['submit'])) {
